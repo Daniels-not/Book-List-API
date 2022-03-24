@@ -8,6 +8,11 @@ const { graphqlHTTP } = require('express-graphql');
 const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 
+const cors = require("cors");
+
+// allow cross-origin requests
+
+app.use(cors());
 
 // middleware
 
@@ -34,7 +39,7 @@ app.use(() => (req, next, err) => {
 
 mongoose.connect(`mongodb+srv://db-daniels:RLYgRwESAy5VGR5@cluster0.i5wf6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, { useNewUrlParser: true }); // connect to mongodb
 
-mongoose.connection.once('open', () => {// once is used to make sure that the connection is made only once
+mongoose.connection.once('open', () => { // once is used to make sure that the connection is made only once
     console.log("connected to mongodb");
 }).on('error', (error) => {
     console.log(error.message);
