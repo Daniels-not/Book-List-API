@@ -37,7 +37,7 @@ app.use(() => (req, next, err) => {
 
 // connect to mongodb
 
-mongoose.connect(`mongodb+srv://db-daniels:RLYgRwESAy5VGR5@cluster0.i5wf6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, { useNewUrlParser: true }); // connect to mongodb
+mongoose.connect(`mongodb+srv://db-daniels:<dbadeleted>@cluster0.i5wf6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, { useNewUrlParser: true }); // connect to mongodb
 
 mongoose.connection.once('open', () => { // once is used to make sure that the connection is made only once
     console.log("connected to mongodb");
